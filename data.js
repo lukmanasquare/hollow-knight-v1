@@ -37,7 +37,7 @@ const bosses = [
     health: 750,
     location: 'Developer Village',
     description:
-      'An innovative developer who uses creativity, persistence, and code to conquer every challenge.',
+      'A Web developer who uses creativity, persistence, and code to conquer every challenge.',
     image: '/images/lukman-knight.jpg',
   },
 ]

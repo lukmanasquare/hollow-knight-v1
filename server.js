@@ -69,10 +69,15 @@ app.get('/bosses/:id', (req, res) => {
   </head>
 
   <body>
-
-    <main class="container">
-
+<section class="detail-hero">
+    <div class="detail-overlay">
       <h1>${boss.name}</h1>
+    </div>
+  </section>
+
+  <main class="detail-container">
+
+    <div class="boss-detail-card">
 
       <p><strong>Health:</strong> ${boss.health}</p>
 
@@ -83,14 +88,16 @@ app.get('/bosses/:id', (req, res) => {
       <img
         src="${boss.image}"
         alt="${boss.name}"
-        width="600"
       >
 
       <br><br>
 
       <a href="/" role="button">Back Home</a>
 
-    </main>
+    </div>
+
+  </main>
+
 
   </body>
   </html>

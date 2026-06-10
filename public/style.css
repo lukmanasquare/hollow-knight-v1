@@ -63,3 +63,50 @@ main img {
     width: 100%;
     border-radius: 7px;
 }
+
+.detail-hero {
+    height: 650px;
+    background-image: url("/images/hollow-knight.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-overlay {
+    background: rgba(0, 20, 38, 0.75);
+    padding: 30px 80px;
+}
+
+.detail-overlay h1 {
+    color: white;
+    margin: 0;
+    font-size: 3rem;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.boss-detail-card {
+    background-color: #08233d;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.boss-detail-card p,
+.boss-detail-card h1 {
+    color: white;
+}
+
+.boss-detail-card img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
