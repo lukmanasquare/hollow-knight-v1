@@ -1,0 +1,63 @@
+body {
+    background-color: #001426;
+    color: white;
+}
+
+.hero {
+    height: 420px;
+    background-image: url("/images/hollow-knight.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8%;
+}
+
+.hero-box {
+    background-color: rgba(0, 20, 38, 0.7);
+    padding: 50px;
+    text-align: center;
+}
+
+.hero-box h1,
+.hero-box p {
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.boss-card {
+    background-color: #08233d;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.boss-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.boss-card h3,
+.boss-card p {
+    color: white;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+main img {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+}
