@@ -2,7 +2,7 @@
 
 Submitted by: **Lukman Adeyemi**
 
-About this web app: **Hollow Knight Boss Guide is a listicle web application that showcases five unique Hollow Knight bosses. Users can browse boss cards on the homepage and click each boss to view a detailed page containing the boss's health, location, description, and image. The application is built using Express, HTML, CSS, JavaScript, and PicoCSS.**
+About this web app: **Hollow Knight Boss Guide is a listicle web application that showcases five unique Hollow Knight bosses. Users can browse boss cards on the homepage and click each boss to view a detailed page containing the boss's health, location, description, and image. The application is built using Node.js, Express, HTML, CSS, JavaScript, and PicoCSS.**
 
 Time spent: **3** hours
 
