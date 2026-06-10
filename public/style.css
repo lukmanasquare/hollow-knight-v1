@@ -4,14 +4,15 @@ body {
 }
 
 .hero {
-    height: 420px;
+    height: 750px;
     background-image: url("/images/hollow-knight.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 8%;
+    padding-right: 1%;
+    padding-top: 25%;
 }
 
 .hero-box {
@@ -27,9 +28,9 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    margin-top: 60px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 30px;
 }
 
 .boss-card {
@@ -42,7 +43,7 @@ body {
 
 .boss-card img {
     width: 100%;
-    height: 230px;
+    height: 290px;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -50,6 +51,7 @@ body {
 .boss-card h3,
 .boss-card p {
     color: white;
+
 }
 
 .container {
@@ -59,5 +61,5 @@ body {
 main img {
     max-width: 600px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 7px;
 }

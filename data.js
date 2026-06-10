@@ -36,7 +36,8 @@ const bosses = [
     name: 'The Developer Knight',
     health: 750,
     location: 'Developer Village',
-    description: 'Develop with creativity',
+    description:
+      'An innovative developer who uses creativity, persistence, and code to conquer every challenge.',
     image: '/images/lukman-knight.jpg',
   },
 ]
