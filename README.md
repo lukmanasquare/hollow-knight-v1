@@ -1,55 +1,82 @@
-# WEB103 Project 1 - Hollow Knight Boss Guide
+# WEB103 Project 2 - Hollow Knight Boss Guide
 
 Submitted by: **Lukman Adeyemi**
 
-About this web app: **Hollow Knight Boss Guide is a listicle web application that showcases five unique Hollow Knight bosses. Users can browse boss cards on the homepage and click each boss to view a detailed page containing the boss's health, location, description, and image. The application is built using Node.js, Express, HTML, CSS, JavaScript, and PicoCSS.**
+## About this web app
 
-Time spent: **3** hours
+Hollow Knight Boss Guide is a listicle web application that showcases five unique Hollow Knight bosses. Users can browse boss cards on the homepage and click each boss to view a detailed page containing the boss's health, location, description, and image.
+
+The application is built using **Node.js, Express, HTML, CSS, JavaScript, PicoCSS, and PostgreSQL**. Data is dynamically retrieved from a **Render PostgreSQL database** instead of using hardcoded data.
+
+Time spent: **2 hours**
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 * [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-* [x] **The web app displays a title**
-* [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
-* [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
+* [x] **Data is supplied to the app using a Render PostgreSQL database**
+* [x] **The web app is connected to a Render PostgreSQL database**
+* [x] **The database contains an appropriately structured table for the list items**
+* [x] **The application retrieves and displays data dynamically from PostgreSQL**
 
-  * [x] **Each detail view is a unique endpoint, such as `localhost:3000/bosses/1`, `localhost:3000/bosses/2`, `localhost:3000/bosses/3`, `localhost:3000/bosses/4`, and `localhost:3000/bosses/5`**
-  * [x] **Unique URLs for each detailed view are demonstrated in the video walkthrough**
-* [x] **The web app serves an appropriate 404 page when no matching route is defined**
-* [x] **The web app is styled using PicoCSS**
+## Optional Features
 
 The following **optional** features are implemented:
 
 * [x] The web app displays items in a card-based layout rather than a traditional list.
-* [x] Custom hero banner with Hollow Knight themed background image.
+* [x] Custom hero banner with a Hollow Knight themed background image.
 * [x] Custom CSS styling to enhance the appearance beyond PicoCSS defaults.
+* [x] Individual detail pages for each boss using dynamic routes.
+
+## Additional Features
 
 The following **additional** features are implemented:
 
 * [x] Added a custom boss named **The Developer Knight** featuring a personalized character profile.
-* [x] Added custom dark-themed styling inspired by the Hollow Knight game aesthetic.
+* [x] Added a custom dark-themed user interface inspired by the Hollow Knight game aesthetic.
 * [x] Added a hero section with a call-to-action button linking users directly to the boss list.
+* [x] Implemented database seeding using a reset script to populate the PostgreSQL database.
+
+## Database Setup
+
+The application uses a **Render PostgreSQL database** with a `bosses` table containing the following fields:
+
+| Column      | Type               |
+| ----------- | ------------------ |
+| id          | SERIAL PRIMARY KEY |
+| name        | VARCHAR(255)       |
+| health      | INTEGER            |
+| location    | VARCHAR(255)       |
+| description | TEXT               |
+| image       | VARCHAR(255)       |
+
+The database is initialized and populated using:
+
+```bash
+npm run reset
+```
+
+Environment variables are stored securely in a local `.env` file and excluded from version control using `.gitignore`.
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of the implemented features:
 
-**https://drive.google.com/file/d/1X7BgtuNBUvNZPWMzQ6IYux9raBHtdaRo/view?usp=sharing**
-
-
+https://drive.google.com/file/d/1X7BgtuNBUvNZPWMzQ6IYux9raBHtdaRo/view?usp=sharing
 
 ## Notes
 
-One challenge encountered during development was creating dynamic routes for each boss while ensuring all images loaded correctly through Express static file serving. Additional time was spent customizing the layout and styling to match the visual theme of Hollow Knight while maintaining the assignment requirements.
+One challenge encountered during development was migrating the application from hardcoded data stored in a JavaScript file to a PostgreSQL database hosted on Render. Additional effort was required to configure environment variables, create database schemas, seed data programmatically, and update Express routes to retrieve data dynamically from the database.
 
 ## License
 
 Copyright 2026 Lukman Adeyemi
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
-> http://www.apache.org/licenses/LICENSE-2.0
+You may obtain a copy of the License at:
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
