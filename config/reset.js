@@ -15,43 +15,37 @@ const createBossesTable = async () => {
     );
   `
 
-  try {
-    await pool.query(createTableQuery)
-    console.log('bosses table created successfully')
-  } catch (err) {
-    console.error('error creating bosses table', err)
-  }
+  await pool.query(createTableQuery)
+  console.log('bosses table created successfully')
 }
 
 const seedBossesTable = async () => {
-  await createBossesTable()
+  try {
+    await createBossesTable()
 
-  bosses.forEach((boss) => {
-    const insertQuery = {
-      text: `
+    for (const boss of bosses) {
+      const insertQuery = `
         INSERT INTO bosses 
-        (name, health, location, description, image) 
+        (name, health, location, description, image)
         VALUES ($1, $2, $3, $4, $5)
-      `,
-    }
+      `
 
-    const values = [
-      boss.name,
-      boss.health,
-      boss.location,
-      boss.description,
-      boss.image,
-    ]
+      const values = [
+        boss.name,
+        boss.health,
+        boss.location,
+        boss.description,
+        boss.image,
+      ]
 
-    pool.query(insertQuery, values, (err) => {
-      if (err) {
-        console.error('error inserting boss', err)
-        return
-      }
-
+      await pool.query(insertQuery, values)
       console.log(`${boss.name} added successfully`)
-    })
-  })
+    }
+  } catch (err) {
+    console.error('error seeding bosses table', err)
+  } finally {
+    await pool.end()
+  }
 }
 
 seedBossesTable()

@@ -1,5 +1,6 @@
 const express = require('express')
 const pool = require('./config/database')
+const { homePage, bossPage, notFoundPage } = require('./templates/pages')
 
 const app = express()
 
@@ -8,49 +9,7 @@ app.use(express.static('public'))
 app.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM bosses ORDER BY id')
-    const bosses = result.rows
-
-    const bossCards = bosses
-      .map(
-        (boss) => `
-      <a href="/bosses/${boss.id}" class="boss-card">
-        <img src="${boss.image}" alt="${boss.name}">
-        <h3>${boss.name}</h3>
-        <p>Health: ${boss.health}</p>
-        <p>Location: ${boss.location}</p>
-      </a>
-    `,
-      )
-      .join('')
-
-    res.send(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Hollow Knight Boss Guide</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-      <link rel="stylesheet" href="/style.css">
-    </head>
-
-    <body>
-
-      <section class="hero">
-        <div class="hero-box">
-          <h1>HOLLOW KNIGHT</h1>
-          <p>For those who are tired of being repeatedly defeated by bosses 💀</p>
-          <a href="#bosses" role="button">All Bosses</a>
-        </div>
-      </section>
-
-      <main class="container" id="bosses">
-        <div class="grid">
-          ${bossCards}
-        </div>
-      </main>
-
-    </body>
-    </html>
-    `)
+    res.send(homePage(result.rows))
   } catch (err) {
     console.error(err)
     res.status(500).send('Database error')
@@ -66,44 +25,10 @@ app.get('/bosses/:id', async (req, res) => {
     const boss = result.rows[0]
 
     if (!boss) {
-      return res.status(404).send(`
-        <h1>404 Boss Not Found</h1>
-        <a href="/">Return Home</a>
-      `)
+      return res.status(404).send(notFoundPage())
     }
 
-    res.send(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>${boss.name}</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-      <link rel="stylesheet" href="/style.css">
-    </head>
-
-    <body>
-      <section class="detail-hero">
-        <div class="detail-overlay">
-          <h1>${boss.name}</h1>
-        </div>
-      </section>
-
-      <main class="detail-container">
-        <div class="boss-detail-card">
-          <p><strong>Health:</strong> ${boss.health}</p>
-          <p><strong>Location:</strong> ${boss.location}</p>
-          <p>${boss.description}</p>
-
-          <img src="${boss.image}" alt="${boss.name}">
-
-          <br><br>
-
-          <a href="/" role="button">Back Home</a>
-        </div>
-      </main>
-    </body>
-    </html>
-    `)
+    res.send(bossPage(boss))
   } catch (err) {
     console.error(err)
     res.status(500).send('Database error')
@@ -111,10 +36,7 @@ app.get('/bosses/:id', async (req, res) => {
 })
 
 app.use((req, res) => {
-  res.status(404).send(`
-    <h1>404 Page Not Found</h1>
-    <a href="/">Return Home</a>
-  `)
+  res.status(404).send(notFoundPage())
 })
 
 app.listen(3000, () => {
