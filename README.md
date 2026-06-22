@@ -14,29 +14,29 @@ Time spent: **2 hours**
 
 The following **required** functionality is completed:
 
-* [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-* [x] **Data is supplied to the app using a Render PostgreSQL database**
-* [x] **The web app is connected to a Render PostgreSQL database**
-* [x] **The database contains an appropriately structured table for the list items**
-* [x] **The application retrieves and displays data dynamically from PostgreSQL**
+- [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
+- [x] **Data is supplied to the app using a Render PostgreSQL database**
+- [x] **The web app is connected to a Render PostgreSQL database**
+- [x] **The database contains an appropriately structured table for the list items**
+- [x] **The application retrieves and displays data dynamically from PostgreSQL**
 
 ## Optional Features
 
 The following **optional** features are implemented:
 
-* [x] The web app displays items in a card-based layout rather than a traditional list.
-* [x] Custom hero banner with a Hollow Knight themed background image.
-* [x] Custom CSS styling to enhance the appearance beyond PicoCSS defaults.
-* [x] Individual detail pages for each boss using dynamic routes.
+- [x] The web app displays items in a card-based layout rather than a traditional list.
+- [x] Custom hero banner with a Hollow Knight themed background image.
+- [x] Custom CSS styling to enhance the appearance beyond PicoCSS defaults.
+- [x] Individual detail pages for each boss using dynamic routes.
 
 ## Additional Features
 
 The following **additional** features are implemented:
 
-* [x] Added a custom boss named **The Developer Knight** featuring a personalized character profile.
-* [x] Added a custom dark-themed user interface inspired by the Hollow Knight game aesthetic.
-* [x] Added a hero section with a call-to-action button linking users directly to the boss list.
-* [x] Implemented database seeding using a reset script to populate the PostgreSQL database.
+- [x] Added a custom boss named **The Developer Knight** featuring a personalized character profile.
+- [x] Added a custom dark-themed user interface inspired by the Hollow Knight game aesthetic.
+- [x] Added a hero section with a call-to-action button linking users directly to the boss list.
+- [x] Implemented database seeding using a reset script to populate the PostgreSQL database.
 
 ## Database Setup
 
