@@ -63,7 +63,6 @@ Environment variables are stored securely in a local `.env` file and excluded fr
 
 Here's a walkthrough of the implemented features:
 
-Hollow Knight 2.gif
 ![Hollow Knight Website Walkthrough](Hollow%20Knight%202.gif)
 
 
