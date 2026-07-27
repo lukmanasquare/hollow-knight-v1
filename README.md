@@ -63,7 +63,10 @@ Environment variables are stored securely in a local `.env` file and excluded fr
 
 Here's a walkthrough of the implemented features:
 
-https://drive.google.com/file/d/1X7BgtuNBUvNZPWMzQ6IYux9raBHtdaRo/view?usp=sharing
+
+
+
+
 
 ## Notes
 
